@@ -2,11 +2,11 @@
 const readline = require('readline-sync');
 
 const VALID_CHOICES = {
-  'r' : 'rock',
-  'p' : 'paper',
-  's' : 'scissors',
-  'l' : 'lizard',
-  'sp' : 'spock'
+  r : 'rock',
+  p : 'paper',
+  s : 'scissors',
+  l : 'lizard',
+  sp : 'spock'
 };
 
 const WINNING_COMBOS = {
@@ -34,32 +34,34 @@ const invalidName = (name) => {
     return true;
   }
   return false;
-}
+};
 
-const playerWins = (choice, computerChoice) => WINNING_COMBOS[choice].includes(computerChoice);
+const playerWins = (choice, computerChoice) => {
+  return WINNING_COMBOS[choice].includes(computerChoice);
+};
 
 const getWinner = (choice, computerChoice) => {
   if (playerWins(choice, computerChoice)) {
-      return userName;
-  } 
+    return userName;
+  }
   if (choice === computerChoice) {
     return 'Tie';
   }
   return 'Computer';
-}
+};
 
 const displayWinner = (winner, choice, computerChoice) => {
   prompt(`You chose ${choice}, computer chose ${computerChoice}`);
   switch (winner) {
-    case userName: prompt(`${userName} wins!`); 
+    case userName: prompt(`${userName} wins!`);
       break;
-    case 'Computer':  prompt(`Computer wins!`); 
+    case 'Computer':  prompt(`Computer wins!`);
       break;
     default:
-      prompt(`It's a tie!`);  
+      prompt(`It's a tie!`);
   }
   prompt(`Your total wins: ${userWins}/${TOURNAMENT_WINS} vs Computer total wins: ${computerWins}/${TOURNAMENT_WINS}`);
-}
+};
 
 const updateWinner = (winner) => {
   switch (winner) {
@@ -68,18 +70,19 @@ const updateWinner = (winner) => {
     case 'Computer':  computerWins++;
       break;
     default:
-      break;  
+      break;
   }
-}
+};
 
-const grandWinnerExists = () => userWins == TOURNAMENT_WINS || computerWins == TOURNAMENT_WINS;
+const grandWinnerExists = () => {
+  return userWins === TOURNAMENT_WINS || computerWins === TOURNAMENT_WINS;
+};
 
 const updateScores = () => {
   userWins = 0;
   computerWins = 0;
-}
+};
 
-  
 //MAIN
 prompt("----- Welcome to Rock, Paper, Scissors, Lizard, Spock! -----");
 
@@ -96,7 +99,7 @@ while (playing) {
   for (const [shortcut, choice] of Object.entries(VALID_CHOICES)) {
     prompt(`${shortcut} for ${choice}`);
   }
-  
+
   let shortcut = readline.question();
 
   while (VALID_CHOICES[shortcut] === undefined) {
@@ -130,6 +133,3 @@ while (playing) {
 }
 
 console.log("----- Thanks for playing Rock, Paper, Scissors, Lizard, Spock! -----");
-
-
-
