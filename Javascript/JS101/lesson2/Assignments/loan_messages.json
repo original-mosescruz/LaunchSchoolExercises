@@ -1,0 +1,16 @@
+{
+  "prompts" : {
+    "loanAmount" : "How much is your loan?",
+    "interestRate": "What is the interest rate (APR)? \nEx: .05 represents 5%",
+    "loanDuration": "How long is the loan duration for in months"
+  },
+  "validation" : {
+    "invalidNumber": "Must be a positive number",
+    "invalidInterestRate" : "Must be be <= 1.0 and >= 0.0",
+    "incorrectResponse" : "Must choose yes, y, no, n"
+  },
+  "intro_outro" : {
+    "intro" : "Welcome to Loan Calculator!",
+    "outro" : "Thanks for using the app!"
+  }
+}

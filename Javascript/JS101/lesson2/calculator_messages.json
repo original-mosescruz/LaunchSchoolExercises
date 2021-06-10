@@ -1,0 +1,19 @@
+{
+  "en" : {
+    "prompts" : {
+      "firstNum" : "What's the first number?",
+      "secondNum" : "What's the second number?",
+      "operation" : "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+      "continue" : "'Would you like to continue?'"
+    },
+    "validation" : {
+      "incorrectNumber": "Hmm... that doesn't look like a valid number.",
+      "incorrectOperation" : "Must choose 1, 2, 3, 4",
+      "incorrectResponse" : "Must choose yes, y, no, n"
+    },
+    "intro_outro" : {
+      "intro" : "Welcome to Calculator!",
+      "outro" : "Thanks for using the app!"
+    }
+  }
+}
