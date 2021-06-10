@@ -83,6 +83,15 @@ const updateScores = () => {
   computerWins = 0;
 };
 
+const getAnswer = () => {
+  let answer = readline.question().toLowerCase();
+  while (answer !== 'n' && answer !== 'y') {
+    prompt('Please enter "y" or "n".');
+    answer = readline.question().toLowerCase();
+  }
+  return answer;
+}
+
 //MAIN
 prompt("----- Welcome to Rock, Paper, Scissors, Lizard, Spock! -----");
 
@@ -121,12 +130,7 @@ while (playing) {
   }
 
   prompt('Do you want to play again (y/n)?');
-  let answer = readline.question().toLowerCase();
-  while (answer !== 'n' && answer !== 'y') {
-    prompt('Please enter "y" or "n".');
-    answer = readline.question().toLowerCase();
-  }
-
+  let answer = getAnswer();
   if (answer !== 'y') {
     playing = false;
   }
